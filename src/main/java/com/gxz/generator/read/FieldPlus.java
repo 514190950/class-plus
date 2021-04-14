@@ -13,13 +13,15 @@ public class FieldPlus {
 
     public FieldPlus(Field prototype) {
         this.prototype = prototype;
+        this.name = prototype.getName();
     }
 
     private Field prototype;
 
+    private String name;
 
     public String getName() {
-        return prototype.getName();
+        return name;
     }
 
     public Object get(Object o) throws IllegalArgumentException, IllegalAccessException {

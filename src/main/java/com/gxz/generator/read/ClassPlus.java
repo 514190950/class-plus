@@ -20,6 +20,10 @@ public class ClassPlus<T> {
         return prototype.getAnnotatedInterfaces();
     }
 
+    public Class<T> getPrototype() {
+        return prototype;
+    }
+
     public String getName() {
         return prototype.getName();
     }

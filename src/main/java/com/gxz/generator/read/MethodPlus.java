@@ -1,17 +1,22 @@
 package com.gxz.generator.read;
 
-import com.gxz.generator.read.springframework.ParameterPlus;
+import lombok.Getter;
 
+import java.lang.annotation.Annotation;
+import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 
 /**
  * @author gxz gongxuanzhang@foxmail.com
  **/
+@Getter
 public class MethodPlus {
 
     private Method prototype;
 
-    private ParameterPlus[] parameterPluses;
+    private ParameterPlus[] parameters;
+
+    private String comment;
 
 
     public MethodPlus(Method prototype){
@@ -22,8 +27,17 @@ public class MethodPlus {
         return prototype.getName();
     }
 
+    public Class<?> getReturnType() {
+        return prototype.getReturnType();
+    }
 
+    public Object invoke(Object obj, Object... args) throws InvocationTargetException, IllegalAccessException {
+        return prototype.invoke(obj,args);
+    }
 
+    public Annotation[] getDeclaredAnnotations()  {
+        return prototype.getDeclaredAnnotations();
+    }
 
 
 }
