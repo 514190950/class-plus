@@ -1,5 +1,6 @@
 package com.gxz.generator.read;
 
+import lombok.Data;
 import lombok.Getter;
 
 import java.lang.annotation.Annotation;
@@ -9,7 +10,7 @@ import java.lang.reflect.Method;
 /**
  * @author gxz gongxuanzhang@foxmail.com
  **/
-@Getter
+@Data
 public class MethodPlus {
 
     private Method prototype;
@@ -22,6 +23,9 @@ public class MethodPlus {
     public MethodPlus(Method prototype){
         this.prototype = prototype;
     }
+
+
+
 
     public String getName(){
         return prototype.getName();
