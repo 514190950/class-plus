@@ -32,7 +32,7 @@ public class ClassPlus<T> {
      * @return ClassPlus
      */
     public static ClassPlus<?> forName(String fullyQualifiedClassName) throws ClassNotFoundException {
-            return ClassPlusBuild.build(fullyQualifiedClassName);
+        return ClassPlusBuild.build(fullyQualifiedClassName);
     }
 
     private static void printMethodJavadoc(MethodJavadoc methodDoc) {
@@ -83,7 +83,7 @@ public class ClassPlus<T> {
             classPlus.setFieldComposition(new FieldComposition(aClass.getDeclaredFields(), fieldComments));
             //  填充方法
             List<MethodComment> methodComments = classDoc.getMethods().stream().map(methodJavadoc -> new MethodComment().parse(methodJavadoc)).collect(Collectors.toList());
-            classPlus.setMethodComposition(new MethodComposition(aClass.getDeclaredMethods(),methodComments));
+            classPlus.setMethodComposition(new MethodComposition(aClass.getDeclaredMethods(), methodComments));
             return classPlus;
         }
     }

@@ -2367,7 +2367,7 @@ public class ClassReader {
                 case Opcodes.FLOAD:
                 case Opcodes.DLOAD:
                 case Opcodes.ALOAD:
-                             case Opcodes.ISTORE:
+                case Opcodes.ISTORE:
                 case Opcodes.LSTORE:
                 case Opcodes.FSTORE:
                 case Opcodes.DSTORE:
@@ -2900,7 +2900,7 @@ public class ClassReader {
      * Reads a Runtime[In]VisibleParameterAnnotations attribute and makes the given visitor visit it.
      *
      * @param methodVisitor                     the visitor that must visit the parameter annotations.
-     * @param context                                                   information about the class being parsed.
+     * @param context                           information about the class being parsed.
      * @param runtimeParameterAnnotationsOffset the start offset of a
      *                                          Runtime[In]VisibleParameterAnnotations attribute, excluding the
      *                                          attribute_info's
@@ -3021,7 +3021,7 @@ public class ClassReader {
             case 'F': // const_value_index, CONSTANT_Float
             case 'I': // const_value_index, CONSTANT_Integer
             case 'J': // const_value_index, CONSTANT_Long
-                             annotationVisitor.visit(
+                annotationVisitor.visit(
                         elementName, readConst(readUnsignedShort(currentOffset), charBuffer));
                 currentOffset += 2;
                 break;
@@ -3339,7 +3339,7 @@ public class ClassReader {
      * @param index                      the index in 'frame' where the parsed type must be stored.
      * @param charBuffer                 the buffer used to read strings in the constant pool.
      * @param labels                     the labels of the method currently being parsed, indexed by their offset. If
-      *                                  the
+     *                                   the
      *                                   parsed type is an ITEM_Uninitialized, a new label for the corresponding NEW
      *                                   instruction is
      *                                   stored in this array if it does not already exist.

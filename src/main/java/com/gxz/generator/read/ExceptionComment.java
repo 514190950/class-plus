@@ -22,7 +22,7 @@ public class ExceptionComment implements BaseComment<ExceptionComment, ThrowsJav
 
     @Override
     public ExceptionComment parse(ThrowsJavadoc baseJavadoc) throws IllegalArgumentException {
-        this.name =  baseJavadoc.getName();
+        this.name = baseJavadoc.getName();
         this.desc = baseJavadoc.getComment().toString();
         return this;
     }

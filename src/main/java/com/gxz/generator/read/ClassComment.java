@@ -35,7 +35,7 @@ public class ClassComment implements BaseComment<ClassComment, ClassJavadoc> {
                 String value;
                 switch (otherJavadoc.getName()) {
                     case AUTHOR:
-                        value = ((CommentText)(otherJavadoc.getComment().getElements().get(0))).getValue().trim();
+                        value = ((CommentText) (otherJavadoc.getComment().getElements().get(0))).getValue().trim();
                         this.author = value;
                         break;
                     case DATE:

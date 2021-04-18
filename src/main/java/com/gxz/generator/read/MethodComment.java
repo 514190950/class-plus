@@ -2,8 +2,6 @@ package com.gxz.generator.read;
 
 
 import com.github.therapi.runtimejavadoc.Comment;
-import com.github.therapi.runtimejavadoc.CommentElement;
-import com.github.therapi.runtimejavadoc.CommentText;
 import com.github.therapi.runtimejavadoc.MethodJavadoc;
 import com.github.therapi.runtimejavadoc.OtherJavadoc;
 import com.github.therapi.runtimejavadoc.ParamJavadoc;
@@ -12,7 +10,6 @@ import com.gxz.generator.read.springframework.util.CollectionUtils;
 import lombok.Data;
 
 import java.util.List;
-import java.util.Objects;
 import java.util.Optional;
 import java.util.stream.Collectors;
 
@@ -23,7 +20,6 @@ import java.util.stream.Collectors;
 @Data
 public class MethodComment implements BaseComment<MethodComment, MethodJavadoc> {
 
-    private static final String RETURN = "return";
     private static final String AUTHOR = "author";
 
     private String name;
@@ -43,7 +39,7 @@ public class MethodComment implements BaseComment<MethodComment, MethodJavadoc> 
 
     @Override
     public MethodComment parse(MethodJavadoc methodJavadoc) throws IllegalArgumentException {
-        if(methodJavadoc == null || methodJavadoc.isEmpty()){
+        if (methodJavadoc == null || methodJavadoc.isEmpty()) {
             return this;
         }
         this.name = methodJavadoc.getName();
@@ -84,7 +80,6 @@ public class MethodComment implements BaseComment<MethodComment, MethodJavadoc> 
                     .toArray(new ParamComment[]{});
         }
     }
-
 
 
 }

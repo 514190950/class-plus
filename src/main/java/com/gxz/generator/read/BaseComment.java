@@ -7,12 +7,11 @@ package com.gxz.generator.read;
  * 注释
  */
 
-public interface BaseComment<Comment,Doc> {
+public interface BaseComment<Comment, Doc> {
 
-     Comment parse(Doc baseJavadoc) throws IllegalArgumentException;
+    Comment parse(Doc baseJavadoc) throws IllegalArgumentException;
 
-     boolean success();
-
+    boolean success();
 
 
 }

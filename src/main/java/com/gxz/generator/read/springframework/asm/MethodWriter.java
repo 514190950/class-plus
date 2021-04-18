@@ -2069,7 +2069,7 @@ final class MethodWriter extends MethodVisitor {
      *                               the attributes of this method might be copied.
      * @param signatureIndex         the constant pool index contained in the Signature attribute of the
      *                               method_info JVMS structure from which the attributes of this method might be
-        *                               copied, or 0.
+     *                               copied, or 0.
      * @param exceptionsOffset       the offset in 'source.b' of the Exceptions attribute of the method_info
      *                               JVMS structure from which the attributes of this method might be copied, or 0.
      * @return whether the attributes of this method can be copied from the attributes of the

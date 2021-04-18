@@ -21,7 +21,7 @@ public class FieldPlus {
     private FieldComment comment;
 
 
-    public FieldPlus(Field prototype,FieldComment comment) {
+    public FieldPlus(Field prototype, FieldComment comment) {
         this.prototype = prototype;
         this.name = prototype.getName();
         this.comment = comment;

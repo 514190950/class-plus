@@ -186,16 +186,16 @@ abstract class Symbol {
      * The string value of this symbol. This is:
      *
      * <ul>
-     *   <li>a field or method descriptor for {@link #CONSTANT_FIELDREF_TAG}, {@link
-     *       #CONSTANT_METHODREF_TAG}, {@link #CONSTANT_INTERFACE_METHODREF_TAG}, {@link
-     *       #CONSTANT_NAME_AND_TYPE_TAG}, {@link #CONSTANT_METHOD_HANDLE_TAG}, {@link
-     *       #CONSTANT_METHOD_TYPE_TAG}, {@link #CONSTANT_DYNAMIC_TAG} and {@link
-     *       #CONSTANT_INVOKE_DYNAMIC_TAG} symbols,
-     *   <li>an arbitrary string for {@link #CONSTANT_UTF8_TAG} and {@link #CONSTANT_STRING_TAG}
-     *       symbols,
-     *   <li>an internal class name for {@link #CONSTANT_CLASS_TAG}, {@link #TYPE_TAG} and {@link
-     *       #UNINITIALIZED_TYPE_TAG} symbols,
-     *   <li>{@literal null} for the other types of symbol.
+     * <li>a field or method descriptor for {@link #CONSTANT_FIELDREF_TAG}, {@link
+     * #CONSTANT_METHODREF_TAG}, {@link #CONSTANT_INTERFACE_METHODREF_TAG}, {@link
+     * #CONSTANT_NAME_AND_TYPE_TAG}, {@link #CONSTANT_METHOD_HANDLE_TAG}, {@link
+     * #CONSTANT_METHOD_TYPE_TAG}, {@link #CONSTANT_DYNAMIC_TAG} and {@link
+     * #CONSTANT_INVOKE_DYNAMIC_TAG} symbols,
+     * <li>an arbitrary string for {@link #CONSTANT_UTF8_TAG} and {@link #CONSTANT_STRING_TAG}
+     * symbols,
+     * <li>an internal class name for {@link #CONSTANT_CLASS_TAG}, {@link #TYPE_TAG} and {@link
+     * #UNINITIALIZED_TYPE_TAG} symbols,
+     * <li>{@literal null} for the other types of symbol.
      * </ul>
      */
     final String value;
@@ -204,19 +204,19 @@ abstract class Symbol {
      * The numeric value of this symbol. This is:
      *
      * <ul>
-     *   <li>the symbol's value for {@link #CONSTANT_INTEGER_TAG},{@link #CONSTANT_FLOAT_TAG}, {@link
-     *       #CONSTANT_LONG_TAG}, {@link #CONSTANT_DOUBLE_TAG},
-     *   <li>the CONSTANT_MethodHandle_info reference_kind field value for {@link
-     *       #CONSTANT_METHOD_HANDLE_TAG} symbols,
-     *   <li>the CONSTANT_InvokeDynamic_info bootstrap_method_attr_index field value for {@link
-     *       #CONSTANT_INVOKE_DYNAMIC_TAG} symbols,
-     *   <li>the offset of a bootstrap method in the BootstrapMethods boostrap_methods array, for
-     *       {@link #CONSTANT_DYNAMIC_TAG} or {@link #BOOTSTRAP_METHOD_TAG} symbols,
-     *   <li>the bytecode offset of the NEW instruction that created an {@link
-     *       Frame#ITEM_UNINITIALIZED} type for {@link #UNINITIALIZED_TYPE_TAG} symbols,
-     *   <li>the indices (in the class' type table) of two {@link #TYPE_TAG} source types for {@link
-     *       #MERGED_TYPE_TAG} symbols,
-     *   <li>0 for the other types of symbol.
+     * <li>the symbol's value for {@link #CONSTANT_INTEGER_TAG},{@link #CONSTANT_FLOAT_TAG}, {@link
+     * #CONSTANT_LONG_TAG}, {@link #CONSTANT_DOUBLE_TAG},
+     * <li>the CONSTANT_MethodHandle_info reference_kind field value for {@link
+     * #CONSTANT_METHOD_HANDLE_TAG} symbols,
+     * <li>the CONSTANT_InvokeDynamic_info bootstrap_method_attr_index field value for {@link
+     * #CONSTANT_INVOKE_DYNAMIC_TAG} symbols,
+     * <li>the offset of a bootstrap method in the BootstrapMethods boostrap_methods array, for
+     * {@link #CONSTANT_DYNAMIC_TAG} or {@link #BOOTSTRAP_METHOD_TAG} symbols,
+     * <li>the bytecode offset of the NEW instruction that created an {@link
+     * Frame#ITEM_UNINITIALIZED} type for {@link #UNINITIALIZED_TYPE_TAG} symbols,
+     * <li>the indices (in the class' type table) of two {@link #TYPE_TAG} source types for {@link
+     * #MERGED_TYPE_TAG} symbols,
+     * <li>0 for the other types of symbol.
      * </ul>
      */
     final long data;
@@ -228,14 +228,14 @@ abstract class Symbol {
      * other fields of this class. It contains:
      *
      * <ul>
-     *   <li>the {@link Type#getArgumentsAndReturnSizes} of the symbol's method descriptor for {@link
-     *       #CONSTANT_METHODREF_TAG}, {@link #CONSTANT_INTERFACE_METHODREF_TAG} and {@link
-     *       #CONSTANT_INVOKE_DYNAMIC_TAG} symbols,
-     *   <li>the index in the InnerClasses_attribute 'classes' array (plus one) corresponding to this
-     *       class, for {@link #CONSTANT_CLASS_TAG} symbols,
-     *   <li>the index (in the class' type table) of the merged type of the two source types for
-     *       {@link #MERGED_TYPE_TAG} symbols,
-     *   <li>0 for the other types of symbol, or if this field has not been computed yet.
+     * <li>the {@link Type#getArgumentsAndReturnSizes} of the symbol's method descriptor for {@link
+     * #CONSTANT_METHODREF_TAG}, {@link #CONSTANT_INTERFACE_METHODREF_TAG} and {@link
+     * #CONSTANT_INVOKE_DYNAMIC_TAG} symbols,
+     * <li>the index in the InnerClasses_attribute 'classes' array (plus one) corresponding to this
+     * class, for {@link #CONSTANT_CLASS_TAG} symbols,
+     * <li>the index (in the class' type table) of the merged type of the two source types for
+     * {@link #MERGED_TYPE_TAG} symbols,
+     * <li>0 for the other types of symbol, or if this field has not been computed yet.
      * </ul>
      */
     int info;

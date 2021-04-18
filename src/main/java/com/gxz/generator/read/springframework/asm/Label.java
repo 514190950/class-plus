@@ -68,13 +68,13 @@ public class Label {
      * outgoing edges:
      *
      * <ul>
-     *   <li>the first one corresponds to the instruction that follows the jsr instruction in the
-     *       bytecode, i.e. where execution continues when it returns from the jsr call. This is a
-     *       virtual control flow edge, since execution never goes directly from the jsr to the next
-     *       instruction. Instead, it goes to the subroutine and eventually returns to the instruction
-     *       following the jsr. This virtual edge is used to compute the real outgoing edges of the
-     *       basic blocks ending with a ret instruction, in {@link #addSubroutineRetSuccessors}.
-     *   <li>the second one corresponds to the target of the jsr instruction,
+     * <li>the first one corresponds to the instruction that follows the jsr instruction in the
+     * bytecode, i.e. where execution continues when it returns from the jsr call. This is a
+     * virtual control flow edge, since execution never goes directly from the jsr to the next
+     * instruction. Instead, it goes to the subroutine and eventually returns to the instruction
+     * following the jsr. This virtual edge is used to compute the real outgoing edges of the
+     * basic blocks ending with a ret instruction, in {@link #addSubroutineRetSuccessors}.
+     * <li>the second one corresponds to the target of the jsr instruction,
      * </ul>
      */
     static final int FLAG_SUBROUTINE_CALLER = 16;
@@ -179,11 +179,11 @@ public class Label {
      * 'sourceInsnBytecodeOffset' and 'reference':
      *
      * <ul>
-     *   <li>'sourceInsnBytecodeOffset' is the bytecode offset of the instruction that contains the
-     *       forward reference,
-     *   <li>'reference' contains the type and the offset in the bytecode where the forward reference
-     *       value must be stored, which can be extracted with {@link #FORWARD_REFERENCE_TYPE_MASK}
-     *       and {@link #FORWARD_REFERENCE_HANDLE_MASK}.
+     * <li>'sourceInsnBytecodeOffset' is the bytecode offset of the instruction that contains the
+     * forward reference,
+     * <li>'reference' contains the type and the offset in the bytecode where the forward reference
+     * value must be stored, which can be extracted with {@link #FORWARD_REFERENCE_TYPE_MASK}
+     * and {@link #FORWARD_REFERENCE_HANDLE_MASK}.
      * </ul>
      *
      * <p>For instance, for an ifnull instruction at bytecode offset x, 'sourceInsnBytecodeOffset' is

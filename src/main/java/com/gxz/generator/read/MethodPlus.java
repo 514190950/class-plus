@@ -20,14 +20,12 @@ public class MethodPlus {
     private String comment;
 
 
-    public MethodPlus(Method prototype){
+    public MethodPlus(Method prototype) {
         this.prototype = prototype;
     }
 
 
-
-
-    public String getName(){
+    public String getName() {
         return prototype.getName();
     }
 
@@ -36,10 +34,10 @@ public class MethodPlus {
     }
 
     public Object invoke(Object obj, Object... args) throws InvocationTargetException, IllegalAccessException {
-        return prototype.invoke(obj,args);
+        return prototype.invoke(obj, args);
     }
 
-    public Annotation[] getDeclaredAnnotations()  {
+    public Annotation[] getDeclaredAnnotations() {
         return prototype.getDeclaredAnnotations();
     }
 

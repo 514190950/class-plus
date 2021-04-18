@@ -35,12 +35,12 @@ package com.gxz.generator.read.springframework.asm;
  * <p>Stack map frames are computed in two steps:
  *
  * <ul>
- *   <li>During the visit of each instruction in MethodWriter, the state of the frame at the end of
- *       the current basic block is updated by simulating the action of the instruction on the
- *       previous state of this so called "output frame".
- *   <li>After all instructions have been visited, a fix point algorithm is used in MethodWriter to
- *       compute the "input frame" of each basic block (i.e. the stack map frame at the beginning of
- *       the basic block). See {@link MethodWriter#computeAllFrames}.
+ * <li>During the visit of each instruction in MethodWriter, the state of the frame at the end of
+ * the current basic block is updated by simulating the action of the instruction on the
+ * previous state of this so called "output frame".
+ * <li>After all instructions have been visited, a fix point algorithm is used in MethodWriter to
+ * compute the "input frame" of each basic block (i.e. the stack map frame at the beginning of
+ * the basic block). See {@link MethodWriter#computeAllFrames}.
  * </ul>
  *
  * <p>Output stack map frames are computed relatively to the input frame of the basic block, which
@@ -61,31 +61,31 @@ package com.gxz.generator.read.springframework.asm;
  * </pre>
  *
  * <ul>
- *   <li>the DIM field, stored in the 6 most significant bits, is a signed number of array
- *       dimensions (from -32 to 31, included). It can be retrieved with {@link #DIM_MASK} and a
- *       right shift of {@link #DIM_SHIFT}.
- *   <li>the KIND field, stored in 4 bits, indicates the kind of VALUE used. These 4 bits can be
- *       retrieved with {@link #KIND_MASK} and, without any shift, must be equal to {@link
- *       #CONSTANT_KIND}, {@link #REFERENCE_KIND}, {@link #UNINITIALIZED_KIND}, {@link #LOCAL_KIND}
- *       or {@link #STACK_KIND}.
- *   <li>the FLAGS field, stored in 2 bits, contains up to 2 boolean flags. Currently only one flag
- *       is defined, namely {@link #TOP_IF_LONG_OR_DOUBLE_FLAG}.
- *   <li>the VALUE field, stored in the remaining 20 bits, contains either
- *       <ul>
- *         <li>one of the constants {@link #ITEM_TOP}, {@link #ITEM_ASM_BOOLEAN}, {@link
- *             #ITEM_ASM_BYTE}, {@link #ITEM_ASM_CHAR} or {@link #ITEM_ASM_SHORT}, {@link
- *             #ITEM_INTEGER}, {@link #ITEM_FLOAT}, {@link #ITEM_LONG}, {@link #ITEM_DOUBLE}, {@link
- *             #ITEM_NULL} or {@link #ITEM_UNINITIALIZED_THIS}, if KIND is equal to {@link
- *             #CONSTANT_KIND}.
- *         <li>the index of a {@link Symbol#TYPE_TAG} {@link Symbol} in the type table of a {@link
- *             SymbolTable}, if KIND is equal to {@link #REFERENCE_KIND}.
- *         <li>the index of an {@link Symbol#UNINITIALIZED_TYPE_TAG} {@link Symbol} in the type
- *             table of a SymbolTable, if KIND is equal to {@link #UNINITIALIZED_KIND}.
- *         <li>the index of a local variable in the input stack frame, if KIND is equal to {@link
- *             #LOCAL_KIND}.
- *         <li>a position relatively to the top of the stack of the input stack frame, if KIND is
- *             equal to {@link #STACK_KIND},
- *       </ul>
+ * <li>the DIM field, stored in the 6 most significant bits, is a signed number of array
+ * dimensions (from -32 to 31, included). It can be retrieved with {@link #DIM_MASK} and a
+ * right shift of {@link #DIM_SHIFT}.
+ * <li>the KIND field, stored in 4 bits, indicates the kind of VALUE used. These 4 bits can be
+ * retrieved with {@link #KIND_MASK} and, without any shift, must be equal to {@link
+ * #CONSTANT_KIND}, {@link #REFERENCE_KIND}, {@link #UNINITIALIZED_KIND}, {@link #LOCAL_KIND}
+ * or {@link #STACK_KIND}.
+ * <li>the FLAGS field, stored in 2 bits, contains up to 2 boolean flags. Currently only one flag
+ * is defined, namely {@link #TOP_IF_LONG_OR_DOUBLE_FLAG}.
+ * <li>the VALUE field, stored in the remaining 20 bits, contains either
+ * <ul>
+ * <li>one of the constants {@link #ITEM_TOP}, {@link #ITEM_ASM_BOOLEAN}, {@link
+ * #ITEM_ASM_BYTE}, {@link #ITEM_ASM_CHAR} or {@link #ITEM_ASM_SHORT}, {@link
+ * #ITEM_INTEGER}, {@link #ITEM_FLOAT}, {@link #ITEM_LONG}, {@link #ITEM_DOUBLE}, {@link
+ * #ITEM_NULL} or {@link #ITEM_UNINITIALIZED_THIS}, if KIND is equal to {@link
+ * #CONSTANT_KIND}.
+ * <li>the index of a {@link Symbol#TYPE_TAG} {@link Symbol} in the type table of a {@link
+ * SymbolTable}, if KIND is equal to {@link #REFERENCE_KIND}.
+ * <li>the index of an {@link Symbol#UNINITIALIZED_TYPE_TAG} {@link Symbol} in the type
+ * table of a SymbolTable, if KIND is equal to {@link #UNINITIALIZED_KIND}.
+ * <li>the index of a local variable in the input stack frame, if KIND is equal to {@link
+ * #LOCAL_KIND}.
+ * <li>a position relatively to the top of the stack of the input stack frame, if KIND is
+ * equal to {@link #STACK_KIND},
+ * </ul>
  * </ul>
  *
  * <p>Output frames can contain abstract types of any kind and with a positive or negative array

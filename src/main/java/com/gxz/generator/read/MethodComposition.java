@@ -23,8 +23,8 @@ public class MethodComposition {
     private final static int EMPTY_CODE = Integer.MAX_VALUE;
 
 
-    public MethodComposition(Method[] methods,List<MethodComment> methodComments) {
-        methodMap = packMap(methods,methodComments);
+    public MethodComposition(Method[] methods, List<MethodComment> methodComments) {
+        methodMap = packMap(methods, methodComments);
     }
 
     public MethodPlus[] getMethods() {
@@ -61,7 +61,7 @@ public class MethodComposition {
         return code;
     }
 
-    private Map<String, List<MethodMap>> packMap(Method[] methods,List<MethodComment> methodComments) {
+    private Map<String, List<MethodMap>> packMap(Method[] methods, List<MethodComment> methodComments) {
         Map<String, List<MethodMap>> candidate = new HashMap<>();
         for (Method method : methods) {
             List<MethodMap> methodMaps = candidate.computeIfAbsent(method.getName(), k -> new ArrayList<>());
